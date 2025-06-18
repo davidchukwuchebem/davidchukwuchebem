@@ -1,0 +1,22 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # Every day at 6 AM UTC
+  workflow_dispatch:      # Manual run button
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Placeholder Action
+        run: echo "🧠 README automation is working! Add custom logic next."
